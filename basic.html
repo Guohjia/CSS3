@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basic-CSS3</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .all {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 0)
+        }
+
+        .cirle {
+            width: 100px;
+            height: 100px;
+            background: red;
+            border-radius: 50%;
+        }
+
+        .semicirle {
+            width: 100px;
+            height: 50px;
+            background: red;
+            border-radius: 50px 50px 0 0;
+        }
+
+        .shadow {
+
+            width: 100px;
+            height: 100px;
+            box-shadow: 3px 4px 5px 3px #ccc;
+        }
+
+        .content {
+            width: 100px;
+            height: 100px;
+            border: 1px dashed;
+        }
+
+        .scale {
+            width: 100px;
+            height: 100px;
+            background: blue;
+            transform: scale(2, .5)
+        }
+
+        .excursion {
+            width: 100px;
+            height: 100px;
+            background: orangered;
+            transform: translate(30px, 20px);
+        }
+
+        .rotate {
+            width: 100px;
+            height: 100px;
+            background: green;
+            transform: rotate(45deg)
+        }
+
+        .rotate-3 {
+            width: 100px;
+            height: 100px;
+            background: gold;
+        }
+
+        .rotate-3:hover {
+            transform: rotateY(180deg);
+            transition: all 2s;
+        }
+
+        .shape {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(to top right, red, orange, green, blue, purple);
+        }
+
+        .shape:hover {
+            background: linear-gradient(to top right, purple, blue, green, orange, red);
+            transition: all linear;
+        }
+
+        .animation {
+            border: 50px solid rgba(89, 173, 236, .2);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border-top: 50px solid rgb(89, 173, 236);
+            animation: 1s round infinite linear;
+        }
+
+        @keyframes round {
+            0%{
+                transform: rotate(0)
+            }
+            100%{
+                transform: rotate(360deg)
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="all">
+        <h3>圆形</h3>
+        <div class="cirle"></div>
+        <h3>半圆</h3>
+        <div class="semicirle"></div>
+        <h3>阴影</h3>
+        <div class="shadow"></div>
+        <h3>放大/缩小</h3>
+        <div class="content">
+            <div class="scale">
+            </div>
+        </div>
+        <h3>偏移</h3>
+        <div class="content">
+            <div class="excursion">
+            </div>
+        </div>
+        <h3>2D旋转</h3>
+        <div class="content">
+            <div class="rotate">
+            </div>
+        </div>
+        <h3>3D旋转和过渡</h3>
+        <div class="content">
+            <div class="rotate-3">
+            </div>
+        </div>
+        <h3>渐变和过渡</h3>
+        <div class="shape"></div>
+        <h3>动画</h3>
+        <div class="animation"></div>
+    </div>
+</body>
+</html>
