@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>FullPage-CSS3</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            /*border:1px solid;*/
+        }
+
+        .fullPage {
+            /*background: url(./image/2.jpg) center center no-repeat;*/
+            background-size: cover;
+            height: 100%;
+            background: url(./image/2.jpg) center center no-repeat;
+        }
+
+        .fullPage:before {
+            content: '';
+            display: block;
+            width: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            background: linear-gradient(to right bottom, rgba(256,257,65,0.5) ,rgba(200,198,135,0.5) ,rgba(138,147,35,0.5));
+        }
+        /*使用两个伪元素绝对定位作为遮罩*/
+
+        .fullPage:after {
+            content: '';
+            display: block;
+            width: 50%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to left bottom, rgba(0,164,83,0.5) ,rgba(125,198,135,0.5) ,rgba(256,147,35,0.4));
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fullPage"></div>
+</body>
+
+</html>
