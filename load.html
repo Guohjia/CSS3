@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>load-css3</title>
+    <style>
+        body {
+            margin: 0;
+            background: rgba(0, 137, 128, .2)
+        }
+
+        .load-1 {
+            width: 100px;
+            height: 100px;
+            border: 50px solid rgba(0, 175, 233, .2);
+            border-radius: 50%;
+            border-top: 50px solid rgb(0, 175, 233);
+            animation: 1s round infinite linear;
+            margin: 0 auto;
+            margin-top: 100px
+        }
+
+        @keyframes round {
+            0% {
+                transform: rotate(0)
+            }
+            100% {
+                transform: rotate(360deg)
+            }
+        }
+
+        @keyframes load-2 {
+            10% {
+                box-shadow: 0 -30px rgb(0, 175, 233);  
+                height: 60px;
+            }
+            /*从0到10% 高度渐变未50px ，10%到100%高度渐变为40px；用box-shadow填充上半部分高度，height填充下半部分高度*/
+            100% {
+                box-shadow: 0 0 rgb(0, 175, 233);
+                height: 40px;
+            }
+        }
+
+
+        .load-2,
+        .load-2:before,
+        .load-2:after {
+            background: rgb(0, 175, 233);
+            animation: 1s load-2 infinite ease-in-out;
+            width: 10px;
+            height: 40px;
+        }
+        .load-2 {
+            margin:100px auto;
+            position: relative;
+            font-size: 12px;
+            animation-delay: 0.16s;
+        }
+        .load-2:before,
+        .load-2:after {
+            position: absolute;
+            top: 0;
+            content: '';
+        }
+
+        .load-2:before {
+            left: -15px;
+        }
+        .load-2:after {
+      left: 15px;
+      animation-delay: 0.32s;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="load-1"></div>
+    <div class="load-2"></div>
+</body>
+
+</html>
