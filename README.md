@@ -12,4 +12,4 @@
 [Preview](https://guohjia.github.io/CSS3/load.html)
 
 * ALL code:
-[Here](https://github.com/Guohjia/CSS3.html)
+[Here](https://github.com/Guohjia/CSS3)
