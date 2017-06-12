@@ -1,6 +1,6 @@
 # CSS3
 
- ### Some special effects by CSS3
+ **Some special effects by CSS3**
 
 * Basic-css3:
 [Preview](https://guohjia.github.io/CSS3/basic.html)
