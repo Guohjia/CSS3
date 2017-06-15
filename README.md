@@ -17,4 +17,4 @@
 * ALL code:
 [Here](https://github.com/Guohjia/CSS3)
 
-*上述CSS3效果都很基础，会不断更新升级，欢迎一起交流学习，fork添加更多新特效。
+* 上述CSS3效果都很基础，会不断更新升级，欢迎一起交流学习，fork添加更多新特效。
