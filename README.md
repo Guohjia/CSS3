@@ -12,7 +12,7 @@
 [Preview](https://guohjia.github.io/CSS3/load.html)
 
 * Carousel:
-[Preview](https://guohjia.github.io/CSS3/carousle.html)
+[Preview](https://guohjia.github.io/CSS3/carousel.html)
 
 * ALL code:
 [Here](https://github.com/Guohjia/CSS3)
