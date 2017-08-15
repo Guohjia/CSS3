@@ -1,0 +1,150 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>simple-clock</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+</head>
+<style>
+    * {
+        margin: 0;
+        border: 0;
+        box-sizing: border-box;
+    }
+
+    .skin {
+        display: flex;
+        width: 350px;
+        height: 350px;
+        justify-content: center;
+        align-items: center;
+        background: radial-gradient(rgb(105, 195, 187), rgb(217, 206, 197));
+        box-shadow: inset 0px 0px 1em #7c7472;
+        margin: 80px auto;
+    }
+
+    .clock {
+        width: 200px;
+        height: 200px;
+        border-radius: 25%;
+        margin: 0 auto;
+        position: relative;
+        background: #f0f1e9;
+        box-shadow: 0 10px 10px #453a3b;
+    }
+
+    .clock::after {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: radial-gradient(rgb(53, 53, 53), rgb(101, 99, 95), rgb(72, 72, 72));
+        content: '';
+        box-shadow: inset 0px 0px 1px #f2f3e9;
+    }
+    /*中心远点*/
+
+    .clock>.dot {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        content: '';
+        background: radial-gradient(circle at 1px 1px, white, #bdb6ac);
+        box-shadow: inset 0px 0px 9px #ccc;
+    }
+
+
+    .clock>div {
+
+        position: absolute;
+        transform-origin: 0 0;
+        z-index: 2;
+        /* box-shadow: 0 4px 4px #dcddd1; */
+    }
+
+    .clock>.secondHand {
+        background: red;
+        border-radius: 100px;
+        width: 80px;
+        height: 2px;
+        top: 100px;
+        left: 88px;
+        transform-origin: 12px 1px;
+    }
+
+    .clock>.hourHand {
+        background: rgb(250, 250, 250);
+        border-radius: 6px;
+        width: 50px;
+        height: 10px;
+        top: 97px;
+        left: 94px;
+        transform-origin: 6px 5px;
+    }
+
+
+    .clock>.minuteHand {
+        background: rgb(250, 250, 250);
+        border-radius: 6px;
+        width: 65px;
+        height: 10px;
+        top: 97px;
+        left: 94px;
+        transform-origin: 5px 4px;
+    }
+</style>
+
+<body>
+    <div class="skin">
+        <div class='clock'>
+            <div class="hourHand"></div>
+            <div class="minuteHand"></div>
+            <div class="secondHand"></div>
+            <div class='dot'></div>
+            <!-- <span class="shuzi12">12</span>
+            <span class="shuzi6">6</span>
+            <span class="shuzi3">3</span>
+            <span class="shuzi9">9</span>  -->
+        </div>
+    </div>
+</body>
+<script>
+    function clock() {
+        var date = new Date()
+        var hours = date.getHours()
+        var minutes = date.getMinutes()
+        var seconds = date.getSeconds()
+
+        if (hours > 12) {
+            hours -= 12
+        }
+
+
+        //全部换算成秒进行计算
+        var secondDeg = seconds / 60 * 360  //60秒一圈
+        var minuteDeg = (minutes * 60 + seconds) / 3600 * 360  //3600秒一圈
+        var hourDeg = (hours * 3600 + minutes * 60 + seconds) / (12 * 3600) * 360 //3600秒*12一圈
+
+  
+        //-90是为初始化旋转角度从12点处开始,因为CSS写完之后是在3点钟处
+        document.querySelector('.secondHand').style.transform = `rotate(${-90 + secondDeg}deg)`
+        document.querySelector('.hourHand').style.transform = `rotate(${-90 + hourDeg}deg)`
+        document.querySelector('.minuteHand').style.transform = `rotate(${-90 + minuteDeg}deg)`
+    }
+
+    clock()
+
+    setInterval(function () {
+        clock()
+    }, 1000)
+
+</script>
+</html
